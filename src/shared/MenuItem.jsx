@@ -3,8 +3,8 @@ import React from 'react';
 const MenuItem = ({item}) => {
   const {_id, name, recipe, image, category, price} = item;
   return (
-    <div className='flex items-center space-x-6'>
-      <img src={image} alt="" className="w-[100px] rounded-tr-[200px] rounded-b-[200px] h-24" />
+    <div id={_id} className='flex items-center space-x-6'>
+      <img src={image} alt={category} className="w-[100px] rounded-tr-[200px] rounded-b-[200px] h-24" />
       <div className="">
         <h2 className='text-xl uppercase'> {name}--------- </h2>
         <p className=""> {recipe} </p>
