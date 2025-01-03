@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
@@ -11,7 +11,7 @@ const Category = () => {
       heading={"ORDER ONLINE"}
       subHeading={"From 11:00am to 10:00pm"}
       ></SectionTitle>
-      <Swiper
+      <SwiperComponent
         modules={[Pagination]}
         spaceBetween={30}
         slidesPerView={3}
@@ -54,7 +54,7 @@ const Category = () => {
           <img className='w-full' src="https://i.ibb.co.com/Fbm0XVD/slide2.jpg" alt="" />
           <h2 className="text-4xl -mt-20 uppercase text-center text-white"> Tameto </h2>
         </SwiperSlide>
-      </Swiper>
+      </SwiperComponent>
     </section>
   );
 };

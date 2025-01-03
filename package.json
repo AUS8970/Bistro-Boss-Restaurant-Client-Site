@@ -11,17 +11,21 @@
   },
   "dependencies": {
     "@smastrom/react-rating": "^1.5.0",
+    "firebase": "^11.1.0",
     "localforage": "^1.10.0",
     "match-sorter": "^8.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
+    "react-hook-form": "^7.54.2",
     "react-parallax": "^3.5.1",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^7.1.1",
+    "react-simple-captcha": "^9.3.1",
     "react-tabs": "^6.1.0",
     "sort-by": "^1.2.0",
-    "swiper": "^11.1.15"
+    "sweetalert2": "^11.15.9",
+    "swiper": "^11.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
