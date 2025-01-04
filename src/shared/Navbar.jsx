@@ -1,10 +1,12 @@
-import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../providers/AuthProvider';
+import { FaShoppingCart } from 'react-icons/fa';
+import useAuth from '../hooks/useAuth';
+import useCart from '../hooks/useCart';
 
 const Navbar = () => {
 
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useAuth();
+  const [cart] = useCart();
 
   const handleLogOut = () => {
     logOut()
@@ -14,12 +16,14 @@ const Navbar = () => {
 
   const links = <>
     <li><NavLink to={'/'}> Home </NavLink></li>
+    <li><NavLink to={'/contact'}> Contact us </NavLink></li>
+    <li><NavLink to={'/dashboard'}> Dashboard </NavLink></li>
     <li><NavLink to={'/menu'}> Our Menu </NavLink></li>
     <li><NavLink to={'/order/salad'}> Order Food </NavLink></li>
   </>
 
   return (
-    <div className="navbar bg-black text-white fixed z-10 max-w-screen-xl opacity-50">
+    <div className="navbar bg-black text-white fixed z-10 max-w-screen-xl opacity-70">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,9 +53,12 @@ const Navbar = () => {
           {links}
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end gap-2">
         {
           user ? <>
+            <Link to={'/dashboard/cart'}>
+              <div className="btn btn-ghost bg-white text-black flex items-center gap-1"> <FaShoppingCart /> +{cart.length} </div>
+            </Link>
             <button onClick={handleLogOut} className="btn btn-ghost"> Logout </button>
           </> : <>
             <Link to={"/login"} className="btn btn-ghost"> Login </Link>
