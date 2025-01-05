@@ -8,6 +8,7 @@ import SignUp from "../pages/Authentication/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../layouts/Dashboard";
 import Cart from "../pages/dashboard/Cart";
+import AllUsers from "../pages/dashboard/AllUsers";
 
 export const router = createBrowserRouter([
   {
@@ -41,12 +42,18 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <PrivateRoute> <Dashboard /> </PrivateRoute>,
     children: [
+      // users routs
       {
         path: 'cart',
         element: <Cart />,
-      }
+      },
+      //admin routs
+      {
+        path: 'allUsers',
+        element: <AllUsers />,
+      },
     ]
   }
 ]);

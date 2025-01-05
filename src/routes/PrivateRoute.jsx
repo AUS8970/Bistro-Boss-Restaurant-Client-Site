@@ -7,8 +7,6 @@ const PrivateRoute = ({ children }) => {
   
   const location = useLocation();
 
-
-
   if( user ) {
     return children;
   }

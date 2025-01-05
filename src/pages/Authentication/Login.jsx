@@ -4,6 +4,7 @@ import { Link, replace, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import useAuth from '../../hooks/useAuth';
+import SocialLogin from '../../components/SocialLogin';
 
 const Login = () => {
 
@@ -52,19 +53,12 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="card bg-base-100 w-full max-w-96 mx-auto my-10 shrink-0 shadow-2xl">
       <Helmet> <title> Bistro Boss | Login </title> </Helmet>
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-              quasi. In deleniti eaque aut repudiandae et a id nisi.
-            </p>
-          </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleLogin} className="card-body">
+      <div className="card-body">
+        <h2 className="text-2xl font-semibold text-center mb-3"> Log In </h2>
+        <SocialLogin />
+        <form onSubmit={handleLogin}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -89,13 +83,11 @@ const Login = () => {
               <div className="form-control mt-6">
                 <input disabled={disabled} className="btn btn-primary" type="submit" value={"Login"} />
               </div>
-            </form>
-            <p className="text-center pb-6">
-              <small>New Here?</small>
-              <Link to={"/signup"}> Create an account </Link>
-            </p>
-          </div>
-        </div>
+        </form>
+        <p className="text-center pb-6">
+          <small>New Here?</small>
+          <Link to={"/signup"}> Create an account </Link>
+        </p>
       </div>
     </div>
   );
