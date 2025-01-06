@@ -38,8 +38,12 @@ const Cart = () => {
   return (
     <div>
       <div className="flex items-center justify-evenly">
-        <h2 className="text-4xl"> Total Orders:{cart.length}</h2>
-        <h2 className="text-4xl"> Total Price: {totalPrice}</h2>
+        <h2 className="text-4xl"> 
+          Total Orders: {cart.length}
+        </h2>
+        <h2 className="text-4xl"> 
+          Total Price: {totalPrice}
+        </h2>
         <button className="btn bg-orange-400 text-white"> PAY </button>
       </div>
       <div className="overflow-x-auto">
