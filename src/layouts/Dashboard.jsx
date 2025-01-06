@@ -1,6 +1,5 @@
 import { FaAd, FaBook, FaCalendar, FaHome, FaList, FaShoppingBag, FaShoppingCart, FaUser, FaUtensils } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
-import './Dashboard.css'
 import { MdMenu } from 'react-icons/md';
 import { IoIosMail } from 'react-icons/io';
 import useCart from '../hooks/useCart';
@@ -10,7 +9,11 @@ const Dashboard = () => {
 
   const [cart] = useCart();
 
-  const [ isAdmin ] = useAdmin();
+  const [ isAdmin, isAdminLoading ] = useAdmin();
+
+  if (isAdminLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className='flex'>
@@ -26,7 +29,7 @@ const Dashboard = () => {
             <li> <NavLink to={'/dashboard/userHome'}> <FaHome /> User Home </NavLink> </li>
             <li> <NavLink to={'/dashboard/reservation'}> <FaCalendar /> Reservation </NavLink> </li>
             <li> <NavLink to={'/dashboard/paymentHistory'}> <FaShoppingCart /> Payment History </NavLink> </li>
-            <li> <NavLink to={'/dashboard/cart'}> <FaShoppingCart /> My Cart ({cart.length})  </NavLink> </li>
+            <li> <NavLink to={'/dashboard/cart'}> <FaShoppingCart /> My Cart ({cart.length}) </NavLink> </li>
             <li> <NavLink to={'/dashboard/review'}> <FaAd /> Add Review </NavLink> </li>
             <li> <NavLink to={'/dashboard/bookings'}> <FaList />  My Booking </NavLink> </li>
           </>}

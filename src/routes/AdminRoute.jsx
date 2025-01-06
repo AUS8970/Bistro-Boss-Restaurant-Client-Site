@@ -14,7 +14,7 @@ const AdminRoute = ({ children }) => {
     return children;
   }
 
-  if (loading || isAdminLoading) {
+  if (loading || isAdmin || isAdminLoading ) {
     return <span className="progress w-56"></span>
   }
 
