@@ -57,7 +57,7 @@ const Navbar = () => {
         {
           user ? <>
             <Link to={'/dashboard/cart'}>
-              <div className="btn btn-ghost bg-white text-black flex items-center gap-1"> <FaShoppingCart /> +{cart.length} </div>
+              <div className="btn btn-ghost bg-white hover:bg-slate-300 text-black flex items-center gap-1"> <FaShoppingCart /> +{cart.length} </div>
             </Link>
             <button onClick={handleLogOut} className="btn btn-ghost"> Logout </button>
           </> : <>

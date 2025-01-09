@@ -2,6 +2,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import useCart from "../../hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -44,7 +45,9 @@ const Cart = () => {
         <h2 className="text-4xl"> 
           Total Price: {totalPrice}
         </h2>
-        <button className="btn bg-orange-400 text-white"> PAY </button>
+        {
+          cart.length > 0 && <Link to={"/dashboard/payment"} className="btn bg-orange-400 text-white"> PAY </Link>
+        }
       </div>
       <div className="overflow-x-auto">
         <table className="table w-full">
