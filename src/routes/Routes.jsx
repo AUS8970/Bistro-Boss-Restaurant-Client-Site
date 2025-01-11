@@ -94,8 +94,8 @@ export const router = createBrowserRouter([
       {
         path: 'updateItems/:id',
         element: <AdminRoute> <UpdateItems /> </AdminRoute>,
-        // loader: ({params}) => fetch(`${import.meta.env.VITE_API_BASE_URL}/menu/${params.id}`),
-        loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`),
+        loader: ({params}) => fetch(`${import.meta.env.VITE_API_BASE_URL}/menu/${params.id}`),
+        // loader: ({params}) => fetch(`${VITE_API_BASE_URL}/menu/${params.id}`),
       },
       {
         path: '*',
